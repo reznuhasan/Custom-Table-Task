@@ -1,0 +1,13 @@
+
+.btn{
+    background-color: #625DF5;
+    padding: 8px 14px;
+    border: none;
+    color: white;
+    margin-bottom: 5px;
+}
+.line{
+    width: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.82);
+    margin-top: 4px;
+}

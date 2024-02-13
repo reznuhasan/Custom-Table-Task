@@ -1,4 +1,7 @@
-
+.CustomTableContainer{
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, 0.546);
+}
 /*****************************************
 Table Header Part Start
 *****************************************/
@@ -11,6 +14,8 @@ Table Header Part Start
 .menuContainer{
     position: relative;
     width: 13%;
+    display: flex;
+    justify-content: center;
 }
 /*****************************************
 HamBurgerIcon Part Start
@@ -51,7 +56,7 @@ columnAddRemoveMenu Part Start
     border: 1px solid black;
     position: absolute;
     padding: 8px;
-    top:0;
+    top:60%;
     left: 0;
     background-color: white;
 }
@@ -66,3 +71,18 @@ columnAddRemoveMenu Part Start
 /*****************************************
 columnAddRemoveMenu Part Finish
 *****************************************/
+
+.columnHeadingDesign{
+    display: flex;
+    padding: 5px;
+}
+
+.tableRow{
+    display: flex;
+    flex-direction: column;
+}
+.tableRowValue{
+    display: flex;
+    padding: 20px 8px;
+    align-items: center;
+}

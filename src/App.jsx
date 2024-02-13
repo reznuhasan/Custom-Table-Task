@@ -5,10 +5,9 @@ import Styles from "./Styles/App.module.css"
 function App() {
 
   return (
-    <div>
+    <div className={Styles.app}>
       <ColumnVisibilityProvider>
         <CustomTable />
-
       </ColumnVisibilityProvider>
     </div>
   )

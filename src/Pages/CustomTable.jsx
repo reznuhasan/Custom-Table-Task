@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Styles from "../Styles/CustomTable.module.css"
 import ColumnList from '../Components/ColumnList'
+import { ColumnDatas, Contents } from '../ComponentData/ListMenuData'
+import { ColumnVisibilityContext } from '../ContextApi/ColumnVisibilityContext'
+import ColumnBox from '../Components/ColumnBox'
+import CellBox from '../Components/CellBox'
 const CustomTable = () => {
     const [showMenu, setShowMenu] = useState(false)
+    const { columnVisibility } = useContext(ColumnVisibilityContext)
     return (
-        <div>
+        <div className={Styles.CustomTableContainer}>
             {/* **************** Table Header Part Start ****************/}
             <div className={Styles.tableHeader}>
                 <h1>Table Title</h1>
                 <div className={Styles.menuContainer}>
-                    <div className={Styles.hamburgerIcon} onClick={()=>setShowMenu(true)}>
+                    <div className={Styles.hamburgerIcon} onClick={() => setShowMenu(prevState => (!prevState))}>
                         <span></span>
                         <span></span>
                         <span></span>
@@ -20,13 +25,9 @@ const CustomTable = () => {
                                 <h5>Add Or Remove Columns</h5>
                             </div>
                             <div className={Styles.listMenu}>
-                                <ColumnList content={"Title"} />
-                                <ColumnList content={"Categories"} />
-                                <ColumnList content={"Price"} />
-                                <ColumnList content={"Date"} />
-                                <ColumnList content={"Author"} />
-                                <ColumnList content={"Status"} />
-                                <ColumnList content={"Action"} />
+                                {
+                                    Contents.map((content, index) => <ColumnList content={content} key={index} />)
+                                }
                             </div>
                         </div>
                     }
@@ -34,9 +35,38 @@ const CustomTable = () => {
                 </div>
             </div>
             {/* **************** Table Header Part Finish ****************/}
-            <div>
+            <div className={Styles.columnPart}>
+                {/* *************** Column Heading Part ****************** */}
+                <div className={Styles.columnHeadingDesign}>
+                    {
+                        Contents.map((content, index) => columnVisibility[content.toLocaleLowerCase()] && <ColumnBox content={content} key={index}
+                        />
+                        )
+                    }
+                </div>
+                <hr />
+                <div>
+                    {
+                        ColumnDatas.map((data, index) => (
+                            <div key={index} className={Styles.tableRow}>
+                                <div className={Styles.tableRowValue}>
+                                {
+                                    Object.keys(data).map(keyContent =>
+                                        columnVisibility[keyContent.toLowerCase()] && <CellBox value={keyContent} key={keyContent} index={index}></CellBox>
+                                    )
+                                }
+                                </div>
+                                
+                                <div>
+                                <hr />
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
 
             </div>
+
         </div>
     )
 }
