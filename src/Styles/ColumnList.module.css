@@ -1,0 +1,11 @@
+.columnListContainer{
+    display: flex;
+    margin:5px;
+}
+.columnListContainer input{
+    margin-right: 8px;
+}
+.checkBoxInput{
+    width: 13px;
+    accent-color: #F72798;
+}

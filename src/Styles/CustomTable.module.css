@@ -1,3 +1,20 @@
+
+/*****************************************
+Table Header Part Start
+*****************************************/
+.tableHeader{
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuContainer{
+    position: relative;
+    width: 13%;
+}
+/*****************************************
+HamBurgerIcon Part Start
+*****************************************/
 .hamburgerIcon{
     display: inline-block;
     cursor: pointer;
@@ -23,3 +40,29 @@
 .hamburgerIcon span:nth-child(3){
     bottom: 0;
 }
+/*****************************************
+HamBurgerIcon Part Finish
+*****************************************/
+
+/*****************************************
+columnAddRemoveMenu Part Start
+*****************************************/
+.columnAddRemoveMenu{
+    border: 1px solid black;
+    position: absolute;
+    padding: 8px;
+    top:0;
+    left: 0;
+    background-color: white;
+}
+.columnAddRemoveMenu h5{
+    font-size: 13px;
+    font-weight: 600;
+}
+.columnAddRemoveMenu .listMenu{
+    display: flex;
+    flex-direction: column;
+}
+/*****************************************
+columnAddRemoveMenu Part Finish
+*****************************************/
