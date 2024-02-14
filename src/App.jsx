@@ -1,5 +1,5 @@
 import { ColumnVisibilityProvider } from "./ContextApi/ColumnVisibilityContext"
-import CustomTable from "./Pages/CustomTable"
+import Table from "./Pages/Table"
 import Styles from "./Styles/App.module.css"
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className={Styles.app}>
       <ColumnVisibilityProvider>
-        <CustomTable />
+        <Table />
       </ColumnVisibilityProvider>
     </div>
   )

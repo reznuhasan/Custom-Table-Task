@@ -1,19 +1,20 @@
 import React, { useContext, useState } from 'react'
-import Styles from "../Styles/CustomTable.module.css"
-import ColumnList from '../Components/ColumnList'
-import { ColumnDatas, Contents } from '../ComponentData/ListMenuData'
+import Styles from "../Styles/Table.module.css"
+import {  TableColumnDatas, headingNames } from '../ComponentData/Datas'
 import { ColumnVisibilityContext } from '../ContextApi/ColumnVisibilityContext'
-import CellBox from '../Components/CellBox'
 import TableHeading from '../Components/TableHeading'
-const CustomTable = () => {
+import TableRow from '../Components/TableRow'
+import AddRemoveList from '../Components/AddRemoveList'
+const Table = () => {
     const [showMenu, setShowMenu] = useState(false)
     const { columnVisibility } = useContext(ColumnVisibilityContext)
     return (
-        <div className={Styles.CustomTableContainer}>
+        <div className={Styles.tableContainer}>
             {/* **************** Table Header Part Start ****************/}
             <div className={Styles.tableHeader}>
                 <h1>Table Title</h1>
                 <div className={Styles.menuContainer}>
+                    {/* ******** Make Hamburger Icon ************ */}
                     <div className={Styles.hamburgerIcon} onClick={() => setShowMenu(prevState => (!prevState))}>
                         <span></span>
                         <span></span>
@@ -26,7 +27,7 @@ const CustomTable = () => {
                             </div>
                             <div className={Styles.listMenu}>
                                 {
-                                    Contents.map((content, index) => <ColumnList content={content} key={index} />)
+                                    headingNames.map((content, index) => <AddRemoveList content={content} key={index} />)
                                 }
                             </div>
                         </div>
@@ -39,7 +40,8 @@ const CustomTable = () => {
                 {/* *************** Column Heading Part ****************** */}
                 <div className={Styles.columnHeadingDesign}>
                     {
-                        Contents.map((content, index) => columnVisibility[content.toLocaleLowerCase()] && <TableHeading content={content} key={index}
+                        // Call Table Heading
+                        headingNames.map((content, index) => columnVisibility[content.toLocaleLowerCase()] && <TableHeading content={content} key={index}
                         />
                         )
                     }
@@ -47,12 +49,13 @@ const CustomTable = () => {
                 <hr />
                 <div>
                     {
-                        ColumnDatas.map((data, index) => (
+                        // Call Table Row Ways
+                        TableColumnDatas.map((data, index) => (
                             <div key={index} className={Styles.tableRow}>
                                 <div className={Styles.tableRowValue}>
                                 {
                                     Object.keys(data).map(keyContent =>
-                                        columnVisibility[keyContent.toLowerCase()] && <CellBox value={keyContent} key={keyContent} index={index}></CellBox>
+                                        columnVisibility[keyContent.toLowerCase()] && <TableRow value={keyContent} key={keyContent} index={index}></TableRow>
                                     )
                                 }
                                 </div>
@@ -71,4 +74,4 @@ const CustomTable = () => {
     )
 }
 
-export default CustomTable
+export default Table

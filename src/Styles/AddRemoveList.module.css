@@ -1,9 +1,9 @@
-.columnListContainer{
+.addRemoveListContainer{
     display: flex;
     margin-top:15px;
     margin-left: 10px;
 }
-.columnListContainer input{
+.addRemoveListContainer input{
     margin-right: 8px;
 }
 .checkBoxInput{
@@ -11,17 +11,17 @@
     accent-color: #F72798;
 }
 @media only screen and (max-width: 767px){
-    .columnListContainer{
+    .addRemoveListContainer{
         margin-top:8px;
         margin-left: 4px;
     }
-    .columnListContainer input{
+    .addRemoveListContainer input{
         margin-right: 4px;
     }
     .checkBoxInput{
         width: 8px;
     }
-    .columnListContainer p{
+    .addRemoveListContainer p{
         font-size: 12px;
     }
 }

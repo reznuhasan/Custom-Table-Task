@@ -3,13 +3,13 @@ import TitleContent from './TitleContent'
 import StatusContent from './StatusContent'
 import ActionContent from './ActionContent'
 import OtherContent from './OtherContent'
-import { ColumnDatas } from '../ComponentData/ListMenuData'
-import Styles from "../Styles/CellBox.module.css"
+import { TableColumnDatas } from '../ComponentData/Datas'
+import Styles from "../Styles/TableRow.module.css"
 
-const CellBox = ({value,index}) => {
-   const content=ColumnDatas[index][value]
+const TableRow = ({value,index}) => {
+   const content=TableColumnDatas[index][value]
   return (
-    <div className={Styles.cellBox}>
+    <div className={Styles.TableRow}>
       {
         value==="title"?<TitleContent content={content}/>:
         value==="status"?<StatusContent content={content}/>:
@@ -19,4 +19,4 @@ const CellBox = ({value,index}) => {
   )
 }
 
-export default CellBox
+export default TableRow

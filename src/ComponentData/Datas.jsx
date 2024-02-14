@@ -1,7 +1,7 @@
 import TitleContent from "../Components/TitleContent"
 
-export const Contents=["Title","Categories","Price","Date","Author","Status","Action"]
-export const ColumnDatas=[
+export const headingNames=["Title","Categories","Price","Date","Author","Status","Action"]
+export const TableColumnDatas=[
     {
         title:{
             text:"AWAYERRR",

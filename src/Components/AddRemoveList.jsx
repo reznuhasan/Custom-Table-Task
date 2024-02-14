@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ColumnVisibilityContext } from "../ContextApi/ColumnVisibilityContext";
-import Styles from "../Styles/ColumnList.module.css"
-const ColumnList = ({content}) => {
+import Styles from "../Styles/AddRemoveList.module.css"
+const AddRemoveList = ({content}) => {
   const { columnVisibility, setColumnVisibility } = useContext(ColumnVisibilityContext); 
   const handleChanged=()=>{
     setColumnVisibility(prevState=>({
@@ -11,7 +11,7 @@ const ColumnList = ({content}) => {
     )
   }
   return (
-    <div className={Styles.columnListContainer}>
+    <div className={Styles.addRemoveListContainer}>
       <input 
       type="checkbox" 
       className={Styles.checkBoxInput} 
@@ -23,4 +23,4 @@ const ColumnList = ({content}) => {
   )
 }
 
-export default ColumnList
+export default AddRemoveList
