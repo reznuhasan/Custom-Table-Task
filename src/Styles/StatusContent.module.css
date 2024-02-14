@@ -3,3 +3,10 @@ select{
     background-color: lightgreen;
     color: green;
 }
+@media only screen and (max-width: 767px){
+    select{
+        padding: 7px 7px;
+        background-color: lightgreen;
+        color: green;
+    }
+}

@@ -3,8 +3,8 @@ import Styles from "../Styles/CustomTable.module.css"
 import ColumnList from '../Components/ColumnList'
 import { ColumnDatas, Contents } from '../ComponentData/ListMenuData'
 import { ColumnVisibilityContext } from '../ContextApi/ColumnVisibilityContext'
-import ColumnBox from '../Components/ColumnBox'
 import CellBox from '../Components/CellBox'
+import TableHeading from '../Components/TableHeading'
 const CustomTable = () => {
     const [showMenu, setShowMenu] = useState(false)
     const { columnVisibility } = useContext(ColumnVisibilityContext)
@@ -39,7 +39,7 @@ const CustomTable = () => {
                 {/* *************** Column Heading Part ****************** */}
                 <div className={Styles.columnHeadingDesign}>
                     {
-                        Contents.map((content, index) => columnVisibility[content.toLocaleLowerCase()] && <ColumnBox content={content} key={index}
+                        Contents.map((content, index) => columnVisibility[content.toLocaleLowerCase()] && <TableHeading content={content} key={index}
                         />
                         )
                     }

@@ -1,0 +1,11 @@
+.tableHeading{
+    width: 20%;
+    font-size: 16px;
+}
+@media only screen and (max-width: 767px){
+    .tableHeading{
+        font-size: 12px !important;
+        font-weight: 500;
+        color: red;
+    }
+}
